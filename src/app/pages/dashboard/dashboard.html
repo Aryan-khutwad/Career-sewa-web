@@ -1,0 +1,111 @@
+
+
+    
+
+      
+
+  
+
+    <!-- WELCOME -->
+    <div class="welcome">
+      <h2>Welcome to Career-Sewa</h2>
+      <p>Your preparation partner for government exams</p>
+    </div>
+
+    <div class="dashboard-grid">
+    
+
+      <!-- SHOW ONLY IF EXAM IS SELECTED -->
+      <div class="dash-card" *ngIf="selectedExam$ | async as selectedExam">
+        <h3>📘 Your Selected Exam</h3>
+
+        <p><strong>{{ selectedExam.name }}</strong></p>
+        <p>{{ selectedExam.description }}</p>
+
+        <button [routerLink]="'/exam-details/' + (userData$ | async)?.selectedExamId">
+          Continue Preparation
+        </button>
+      </div>
+
+
+      <!-- SELECTED EXAM -->
+      <div class="dash-card" *ngIf="selectedExam$ | async as selectedExam">
+        <h3>📘 Your Exam</h3>
+        <p><strong>{{ selectedExam.name }}</strong></p>
+        <p>{{ selectedExam.description }}</p>
+        <button>Go to Exam</button>
+      </div>
+      </div>
+
+      <div class="dashboard-grid">
+  
+      <!-- ALL EXAMS -->
+      <div class="dash-card">
+        <h3>📚 Browse Exams</h3>
+        <p>
+          Explore all government exams available on Career-Sewa.
+        </p>
+        <button routerLink="/exams">View Exams</button>
+      </div>
+  
+    
+    <!-- AI ASSISTANT CARD -->
+<div class="dash-card">
+    <h3>🤖 AI Assistant</h3>
+    <p>
+      Ask doubts, get exam guidance and preparation tips anytime.
+    </p>
+  
+    <button routerLink="/ai-assistant">
+      Ask AI Assistant
+    </button>
+  </div>
+  </div>
+
+  <div class="dashboard-grid">
+  
+  <!-- TELEGRAM CARD -->
+  <div class="dash-card">
+    <h3>📢 Telegram Updates</h3>
+    <p>
+      Join our Telegram channel for exam updates, PDFs and notices.
+    </p>
+  
+    <a
+      href="https://t.me/+k7mPUps4UKk1Nzll"
+      target="_blank"
+    >
+      <button>
+        Join Telegram
+      </button>
+    </a>
+  </div>
+  
+  <!-- NOTIFICATIONS CARD -->
+  <div class="dash-card">
+    <h3>📰 Latest Updates</h3>
+    <p>
+      Stay updated with important exam notifications and deadlines.
+    </p>
+  
+    <button disabled>
+      Coming Soon
+    </button>
+  </div>
+  </div>
+  
+  
+    <!-- INFO SECTION -->
+    <div class="info-box">
+      <h4>Why Career-Sewa?</h4>
+      <ul>
+        <li>✔ Trusted exam resources</li>
+        <li>✔ Simple & student-friendly</li>
+        <li>✔ Free access to notes & PYQs</li>
+      </ul>
+    </div>
+
+    
+  
+  
+  

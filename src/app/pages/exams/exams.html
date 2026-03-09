@@ -1,0 +1,14 @@
+<h2 class="page-title">Select Your Exam</h2>
+
+<div class="exam-grid">
+  <div class="exam-card" *ngFor="let exam of exams$ | async">
+    
+    <h3>{{ exam.Name }}</h3>
+    <p>{{ exam.Description }}</p>
+
+    <button (click)="openExam(exam.id)">
+      View Details
+    </button>
+
+  </div>
+</div>

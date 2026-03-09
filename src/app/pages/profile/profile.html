@@ -1,0 +1,35 @@
+<div class="profile-page">
+
+    <h2 class="page-title">My Profile</h2>
+  
+    <!-- USER INFO -->
+    <div class="profile-card">
+      <h3>👤 User Information</h3>
+
+      <p><strong>Name:</strong> {{(userData$ | async)?.name}}</p>
+      <p><strong>Email:</strong> {{(userData$ | async)?.email}}</p>
+    </div>
+  
+    <!-- SELECTED EXAM -->
+    <div class="profile-card">
+      <h3>🎯 Selected Exam</h3>
+  
+      <p><strong>Exam Name:</strong> MPSC</p>
+      <p>Maharashtra Public Service Commission</p>
+  
+      <button class="secondary-btn">
+        Change Exam
+      </button>
+    </div>
+  
+    <!-- ACCOUNT ACTIONS -->
+    <div class="profile-card">
+      <h3>⚙️ Account Actions</h3>
+  
+      <button class="danger-btn" >
+        Logout
+      </button>
+    </div>
+  
+  </div>
+  

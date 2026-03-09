@@ -1,0 +1,37 @@
+<div class="login-container">
+
+    <!-- ===== LOGO & BRAND ===== -->
+    <div class="brand">
+      <div class="logo">CS</div>
+      <h1>Career-Sewa</h1>
+      <p>Your Gateway to Government Exams</p>
+    </div>
+  
+    <!-- ===== LOGIN CARD ===== -->
+    <div class="login-card">
+  
+      <h2>Login</h2>
+      <p class="subtitle">Please login to continue</p>
+  
+      <input
+        type="email"
+        placeholder="Email address"
+        [(ngModel)]="email"
+      />
+  
+      <input
+        type="password"
+        placeholder="Password"
+        [(ngModel)]="password"
+      />
+  
+      <button (click)="login()">Login</button>
+  
+      <p class="register-text">
+        Not registered?
+        <a routerLink="/register">Create an account</a>
+      </p>
+  
+    </div>
+  </div>
+  

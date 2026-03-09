@@ -1,0 +1,83 @@
+<!-- ================= DEBUG INFO ================= -->
+<div style="background: #f0f0f0; padding: 10px; margin: 10px 0; border-radius: 5px; font-size: 12px;">
+  <p><strong>Debug Info:</strong></p>
+  <p>Exam ID: {{ examId || 'Not loaded' }}</p>
+  <p>Exam Data: {{ (exam$ | async) | json }}</p>
+  <p>Books Count: {{ (books$ | async)?.length || 0 }}</p>
+  <p>Notes Count: {{ (notes$ | async)?.length || 0 }}</p>
+  <p>PYQs Count: {{ (pyqs$ | async)?.length || 0 }}</p>
+  <p>Videos Count: {{ (videos$ | async)?.length || 0 }}</p>
+</div>
+
+<!-- ================= EXAM BASIC INFO ================= -->
+<div class="select-exam-box">
+    <button (click)="selectExam()">
+      ✅ Select This Exam
+    </button>
+  </div>
+  
+<div *ngIf="exam$ | async as exam">
+    <h2>{{ exam.Name }}</h2>
+    <p>{{ exam.Description }}</p>
+  
+    <a [href]="exam.officialLink" target="_blank">
+      🏛️ Official Registration
+    </a>
+  </div>
+  
+  <hr />
+  
+  <!-- ================= BOOKS ================= -->
+  <div class="card" (click)="toggle('books')">
+    <h3>📘 Books</h3>
+  </div>
+  
+  <div class="panel" *ngIf="activeSection === 'books'">
+    <ul>
+      <li *ngFor="let b of books$ | async">
+        {{ b.title }} – {{ b.author }}
+        <a [href]="b.pdfUrl" target="_blank">View</a>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- ================= NOTES ================= -->
+  <div class="card" (click)="toggle('notes')">
+    <h3>📝 Notes</h3>
+  </div>
+  
+  <div class="panel" *ngIf="activeSection === 'notes'">
+    <ul>
+      <li *ngFor="let n of notes$ | async">
+        {{ n.title }}
+        <a [href]="n.pdfUrl" target="_blank">View</a>
+      </li>
+    </ul>
+  </div>
+  
+  <!-- ================= PYQs ================= -->
+  <div class="card" (click)="toggle('pyqs')">
+    <h3>❓ PYQs</h3>
+  </div>
+  
+  <div class="panel" *ngIf="activeSection === 'pyqs'">
+    <ul>
+      <li *ngFor="let p of pyqs$ | async">
+        {{ p.Year }} – {{ p.link }}
+      </li>
+    </ul>
+  </div>
+  
+  <!-- ================= VIDEOS ================= -->
+  <div class="card" (click)="toggle('videos')">
+    <h3>🎥 Videos</h3>
+  </div>
+  
+  <div class="panel" *ngIf="activeSection === 'videos'">
+    <ul>
+      <li *ngFor="let v of videos$ | async">
+        <a [href]="v.videoUrl" target="_blank">Watch Video</a>
+      </li>
+    </ul>
+  </div>
+  

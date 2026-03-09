@@ -1,0 +1,12 @@
+.message.user {
+    background: var(--accent);
+    color: white;
+    margin-left: auto;
+  }
+  
+  .message.bot {
+    background: #e3f2fd;
+    color: var(--text);
+    margin-right: auto;
+  }
+  

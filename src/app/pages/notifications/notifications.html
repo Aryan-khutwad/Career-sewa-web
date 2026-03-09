@@ -1,0 +1,25 @@
+<div class="notifications-page">
+
+  <h2 class="page-title">🔔 Notifications</h2>
+  <p class="subtitle">
+    Important exam updates and announcements
+  </p>
+
+  <!-- LOADING -->
+  <p *ngIf="loading">Loading notifications...</p>
+
+  <!-- NO NOTIFICATIONS -->
+  <p *ngIf="!loading && (notifications$ | async)?.length === 0">
+    No notifications available right now.
+  </p>
+
+  <!-- NOTIFICATION LIST -->
+  <div
+    class="notification-card"
+    *ngFor="let n of notifications$ | async"
+  >
+    <h4>{{ n.title }}</h4>
+    <p>{{ n.message }}</p>
+  </div>
+
+</div>

@@ -1,0 +1,63 @@
+.app-header {
+
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  
+  height: 60px;
+  background: orange; /* ORANGE HEADER */
+  color: rgb(233, 142, 14);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* LEFT SIDE */
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  background: white;
+  color: var(--accent);
+
+  font-weight: bold;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+}
+
+/* RIGHT SIDE */
+
+.profile-btn {
+  background: var(--primary); /* BLUE BUTTON */
+  color: white;
+  border: none;
+
+  padding: 6px 12px;
+  border-radius: 6px;
+
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.profile-btn:hover {
+  background: #125aa3;
+}
